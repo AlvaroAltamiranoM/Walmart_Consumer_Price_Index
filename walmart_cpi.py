@@ -36,17 +36,6 @@ headers = {
     'accept-language': 'en-US,en;q=0.9,es-MX;q=0.8,es;q=0.7'
 }
 
-'''
-URL = 'https://www.walmart.com.ni/abarrotes'
-page = requests.get(URL)
-# specifying a desired format of "page" using the html parser    soup = BeautifulSoup(page.text, "html.parser")
-soup = BeautifulSoup(page.text, "html.parser")
-Ofertas_Activas = soup.find(
-    class_="vtex-search-result-3-x-totalProducts--layout pv5 ph9 bn-ns bt-s b--muted-5 tc-s tl t-action--small").text
-Ofertas_Activas = int(''.join(filter(str.isdigit, Ofertas_Activas)))
-print(Ofertas_Activas)
-'''
-
 #Empty list
 texto = []
 #items_perpage = 21
@@ -70,7 +59,6 @@ for pages in range(1,51): #50 parece ser el max de paginas por seccion
     except:
         break
     pass
-    
     
 #Procesando data descargada
 # Manipulacion de listas para crear dataframe
