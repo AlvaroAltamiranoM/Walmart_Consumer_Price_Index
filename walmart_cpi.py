@@ -119,7 +119,7 @@ fig1.add_annotation(
 
 plot(fig1)
 
-fig2 = px.bar(data[0:15].sort_values('weight'), x='weight', y="name", 
+fig2 = px.bar(data.sort_values('weight', ascending=False)[0:15], x='weight', y="name", 
              template="simple_white", text='weight',
              title= 'Fig 2. Heaviest Grocery Items')
 
@@ -139,3 +139,24 @@ fig2.add_annotation(
     xref="x domain", yref="y domain",x=0.01, y=-0.14,showarrow=False)
 
 plot(fig2)
+
+fig3 = px.bar(data.sort_values('price', ascending=False)[0:15], x='price', y="name", 
+             template="simple_white", text='price',
+             title= 'Fig 3. Most Expensive Single Grocery Items')
+
+fig3.update_layout(showlegend=True, legend_title_text='',
+                xaxis_title="Price in Local Currency Units (nominal C$)", 
+                yaxis_title="",
+                font_family="Arial", title_font_family="Arial Black",
+                yaxis_title_font_family ="Arial Black",
+                xaxis_title_font_family ="Arial Black",
+                title_font_color="black",
+                title_font_size=19, legend_title_font_color="black",
+                legend=dict(yanchor="top", y=0.89, xanchor="right", x=1),
+                )
+fig3.update_traces(textposition='inside')
+fig3.add_annotation(
+    text="Source: author.",
+    xref="x domain", yref="y domain",x=0.01, y=-0.14,showarrow=False)
+
+plot(fig3)
