@@ -4,6 +4,13 @@ Created on Sun Jan  2 17:03:48 2022
 
 @author: unily
 """
+import os
+
+path = r'C:\Users\unily\OneDrive\Documentos\Python Scripts\walmart\data'
+os.chdir(path)
+
+
+from datetime import timedelta
 
 import pandas as pd
 from datetime import date
@@ -36,6 +43,17 @@ headers = {
     'accept-language': 'en-US,en;q=0.9,es-MX;q=0.8,es;q=0.7'
 }
 
+'''
+URL = 'https://www.walmart.com.ni/abarrotes'
+page = requests.get(URL)
+# specifying a desired format of "page" using the html parser    soup = BeautifulSoup(page.text, "html.parser")
+soup = BeautifulSoup(page.text, "html.parser")
+Ofertas_Activas = soup.find(
+    class_="vtex-search-result-3-x-totalProducts--layout pv5 ph9 bn-ns bt-s b--muted-5 tc-s tl t-action--small").text
+Ofertas_Activas = int(''.join(filter(str.isdigit, Ofertas_Activas)))
+print(Ofertas_Activas)
+'''
+
 #Empty list
 texto = []
 #items_perpage = 21
@@ -59,6 +77,7 @@ for pages in range(1,51): #50 parece ser el max de paginas por seccion
     except:
         break
     pass
+    
     
 #Procesando data descargada
 # Manipulacion de listas para crear dataframe
@@ -95,6 +114,7 @@ data['country'] = 'nic'
 data['date'] = date.today()
 
 data = data[['name','weight','price','country','date']]
+data = data.drop_duplicates(['name'])
 
 ## GRAPHS
 # Graph 1
@@ -160,3 +180,12 @@ fig3.add_annotation(
     xref="x domain", yref="y domain",x=0.01, y=-0.14,showarrow=False)
 
 plot(fig3)
+
+#Salvando serie
+#data.to_csv(r'walmart_{0}.csv'.format(date.today()), index = False)
+
+baseline_date = date.today() - timedelta(days=6)
+
+history = pd.read_csv(r'walmart_{0}.csv'.format(baseline_date))
+
+history.append(data, sort = True, ignore_index=True).to_csv(r'walmart_{0}.csv'.format(date.today()), index = False)
