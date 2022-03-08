@@ -1,5 +1,5 @@
 # About
-This Python-Selenium code crawls through Walmart's grocery store items and download their name, price, weight, and discount information if available.
+This Python-Selenium code crawls through Walmart's grocery store items and downloads their name, price, weight, and discount information if available.
 
 ### Read more in this blog:
 
