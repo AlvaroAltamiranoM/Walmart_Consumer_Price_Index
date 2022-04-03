@@ -6,7 +6,7 @@ Created on Sun Jan  2 17:03:48 2022
 """
 import os
 
-path = r'root'
+path = r''
 os.chdir(path)
 
 
@@ -30,7 +30,7 @@ from plotly.offline import plot
 driver = webdriver.Chrome(ChromeDriverManager().install())
 
 headers = {
-    'authority': 'https://www.walmart.com.ni',
+    'authority': 'https://www.walmart.com',
     'cache-control': 'max-age=0',
     'dnt': '1',
     'upgrade-insecure-requests': '1',
@@ -45,12 +45,13 @@ headers = {
 
 #Empty list
 texto = []
-countries = ['sv','gt','mx']
-section = ['abarrotes','higiene-y-belleza','farmacia', 'articulos-para-el-hogar']
+countries = ['ni','hn','sv','gt','mx']
+
+section = ['abarrotes','carnes-y-pescados','lacteos','higiene-y-belleza','farmacia', 'articulos-para-el-hogar']
 #items_perpage = 21
 #for pages in range(1, int((Ofertas_Activas / items_perpage) + 1)):
 for cc in countries:
-    for pages in range(1,50): #50 parece ser el max de paginas por seccion
+    for pages in range(1,10): #50 parece ser el max de paginas por seccion
         for sec in section:
             URL = 'https://www.walmart.com.{0}/'.format(cc)+format(sec)+'?order=OrderByTopSaleDESC&page='+format(pages)
             print(URL)
@@ -64,6 +65,7 @@ for cc in countries:
                 element_present = EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div[1]/div/div[5]/div/div/section/div[2]/div/div/div/div[4]/div/div[2]/div/div[6]/div/div/div/div[2]/div[24]'))
                 WebDriverWait(driver, 30).until(element_present)
                 results = [i.text for i in driver.find_elements_by_xpath('/html/body/div[2]/div/div[1]/div/div[5]/div/div/section/div[2]/div/div/div/div[4]/div/div[2]/div/div[6]/div/div/div/div[2]/div')]            
+                results.append(str(sec))
                 print(results)
                 texto.append(results)
                 time.sleep(1)
@@ -178,6 +180,8 @@ for cc in countries:
     #Salvando serie
     #data.to_csv(r'walmart_{0}_{1}.csv'.format(cc,date.today()), index = False)  
     
-    baseline_date = date.today() - timedelta(days=1)
+    baseline_date = date.today() - timedelta(days=5)
+    
     history = pd.read_csv(r'walmart_{0}_{1}.csv'.format(cc, baseline_date))
+    
     history.append(data, sort = True, ignore_index=True).to_csv(r'walmart_{0}_{1}.csv'.format(cc,date.today()), index = False)
