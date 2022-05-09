@@ -1,0 +1,54 @@
+Item,value,Subtype,Basket,Quantity,name
+Rice,634.98,Staples,Food,38,arroz el faisan
+Beans,773.84,Staples,Food,34,frijol sabemasanel rojo
+Sugar,410.4,Staples,Food,30,azucar san antonio regular
+Cooking oil,523.25,Staples,Food,7,aceite rico vegetal
+Beef,972.88,Meats,Food,8,carne de res para asar
+Pork,429.6,Meats,Food,5,posta de cerdo empacado
+Poultry,406.96,Meats,Food,8,pechuga entera pollo fresca
+Fish,845.46,Meats,Food,9,torta de pescado caf bolsa
+Milk,1010.4,Dairy,Food,30,leche veritos pinolillo bolsa
+Eggs,445.62,Dairy,Food,7,media cajilla de huevo blanco barranca  unidades
+Cheese,899.64,Dairy,Food,9,queso monte fresco seco
+Tortilla ,1297.32,Cereals,Food,57,tortilla milpa real tostadas planas
+Pinolillo,320.5,Cereals,Food,10,pinolillo sabemas
+Pastas,177.5,Cereals,Food,5,pasta sabemas spaguetti gr
+Bread,813.24,Cereals,Food,27,harina bollo fino de trigo
+Tomatoes,234.22,Vegetables,Food,14,
+Onions,267.44,Vegetables,Food,8,
+Potatoes,293.55,Vegetables,Food,15,
+Pumpkin,260.16,Vegetables,Food,32,
+Peppers,105.15,Vegetables,Food,3,
+Plaintain,180.8,Vegetables,Food,16,
+Oranges,440.68,Vegetables,Food,46,
+Cabbage,16.82,Vegetables,Food,2,
+Laundry soap,263.801,Personal goods,Habitat,13,
+Laundry detergent,88.36020966,Personal goods,Habitat,28,
+Tooth paste,82.7718,Personal goods,Habitat,2,pasta dental colgate triple acción
+Matches,22.3922,Personal goods,Habitat,11,fosforos suli de madera   cajitas
+Broom,87.413,Personal goods,Habitat,1,
+Toilet paper,181.4274,Personal goods,Habitat,11,
+Soap,73.4124,Personal goods,Habitat,5,pack jabon dove de tocador original
+Sanitary pas,53.1726,Personal goods,Habitat,2,toalla sanitaria kotex esencial sin alas aloe   unidades
+Deodorant,86.203,Personal goods,Habitat,2,desodorante barra rexona men invisible
+Tooth brush,42.2055,Personal goods,Habitat,2,cepillo de bolsillo equate con espejo  unidad
+Rent,900,Rent,Habitat,1,
+Cooking gas,436.22,Utilities,Habitat,1,
+Electricity,316.297725,Utilities,Habitat,100,
+Water,163.3109781,Utilities,Habitat,5292,
+Transport,600,Transport,Habitat,240,
+Pants_men,299.5860868,Clothing,Apparel,1,
+Shirt_men,91.9913158,Clothing,Apparel,1,
+Boxers_men,76.54507602,Clothing,Apparel,2,
+Socks_men,43.1468709,Clothing,Apparel,1,
+Leather shoes_men,206.1907245,Clothing,Apparel,0,
+Shirt_women,90.9348,Clothing,Apparel,1,
+Pants_women,246.1056,Clothing,Apparel,1,
+Dress_women,143.555,Clothing,Apparel,1,
+Blousers_women,54.1692,Clothing,Apparel,1,
+Brassier_women,53.2821,Clothing,Apparel,1,
+Sandals (synthetics leathers),113.1548,Clothing,Apparel,0,
+Kids_clothing,171.7622153,Clothing,Apparel,1,
+Kids_underwear,49.98468937,Clothing,Apparel,1,
+Kids_socks,42.16220554,Clothing,Apparel,1,
+Kid shoes (synthetic leather),158.0836002,Shoes,Apparel,0,
