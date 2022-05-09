@@ -51,13 +51,11 @@ section = ['abarrotes','carnes-y-pescados','lacteos','higiene-y-belleza','farmac
 #items_perpage = 21
 #for pages in range(1, int((Ofertas_Activas / items_perpage) + 1)):
 for cc in countries:
-    for pages in range(1,10): #50 parece ser el max de paginas por seccion
+    for pages in range(1,10): #50 pages inspected per section
         for sec in section:
             URL = 'https://www.walmart.com.{0}/'.format(cc)+format(sec)+'?order=OrderByTopSaleDESC&page='+format(pages)
             print(URL)
-            # conducting a request of the stated URL above:
             driver.get(URL)
-        #Esperando que la información esté visible y ejecutando crawler:
             time.sleep(5)
             try:
                 driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
