@@ -21,7 +21,7 @@ The reference implementation targets Nicaragua, but the crawler is designed to e
 
 The collected series is intended as the basis for a Consumer Price Index, weighting products according to the national CPI methodology (Banco Central de Nicaragua) so the result aligns with the official basket. Planned extensions include recurring downloads to lengthen the series, text-similarity filtering to select comparable items across periods, and time-series decomposition.
 
-## Write-ups
+## Blog posts
 
 - *How I Learned to Stop Worrying and Built a Walmart Consumer Price Index (Part I)* - [Medium](https://ajaltamiranomontoya.medium.com/how-i-learned-to-stop-worrying-and-built-a-walmart-consumer-price-index-cpi-part-i-3535d2751927)
 - *Tracking Consumer Price Statistics in Real-Time with Data from Walmart* - [Medium](https://ajaltamiranomontoya.medium.com/tracking-consumer-price-statistics-in-real-time-with-data-from-walmart-part-1-1-91bf2f355a14)
